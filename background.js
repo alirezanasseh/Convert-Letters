@@ -27,8 +27,12 @@ function onClickHandler(info, tab){
         out = convertEn2Fa(info.selectionText);
     else if (info.menuItemId == "selection2En")
         out = convertFa2En(info.selectionText);
- 
-    prompt('متن تبدیل شده', out);
+
+    chrome.tabs.executeScript(tab.id, {
+        code: 'var convertedText = "' + out + '";'
+    }, function() {
+        chrome.tabs.executeScript(tab.id, {file: 'content.js'});
+    });
 }
 
 chrome.contextMenus.onClicked.addListener(onClickHandler);
