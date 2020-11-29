@@ -1,0 +1,17 @@
+{
+    "name": "تبدیل حروف انگلیسی و فارسی",
+    "version": "1.0",
+    "description": "تبدیل حروف انگلیسی به فارسی و بالعکس وقتی اشتباه تایپ کردی!",
+    "permissions": ["activeTab","storage", "contextMenus"],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "icons": {
+        "16": "img/hen16.png",
+        "32": "img/hen32.png",
+        "48": "img/hen48.png",
+        "128": "img/hen128.png"
+    },
+    "manifest_version": 2
+}
