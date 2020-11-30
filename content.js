@@ -1,0 +1,1 @@
+document.execCommand('insertText', false, convertedText);
