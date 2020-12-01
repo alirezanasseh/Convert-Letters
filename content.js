@@ -1,1 +1,1 @@
-document.execCommand('insertText', false, convertedText);
+document.execCommand('insertHTML', false, convertedText);
