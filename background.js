@@ -1,6 +1,6 @@
 function convert(mapObj, input)
 {
-    input = input.toLowerCase().replace(/./gi, function(matched){
+    input = input.toString().replace(/./gi, function(matched){
         var ret = mapObj[matched];
         return typeof ret !== 'undefined' ? ret : matched;
     });
