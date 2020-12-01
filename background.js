@@ -38,7 +38,6 @@ function onClickHandler(info, tab){
 chrome.contextMenus.onClicked.addListener(onClickHandler);
 
 chrome.runtime.onInstalled.addListener(function() {
-    // Create one test item for each context type. 
     chrome.contextMenus.create({"title": "تبدیل به فارسی", "contexts":["selection"], "id": "selection2Fa"});
     chrome.contextMenus.create({"title": "تبدیل به انگلیسی", "contexts":["selection"], "id": "selection2En"});
 });
