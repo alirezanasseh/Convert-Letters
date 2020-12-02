@@ -1,6 +1,6 @@
 function convert(mapObj, input)
 {
-    input = input.toLowerCase().replace(/./gi, function(matched){
+    input = input.toString().replace(/./gi, function(matched){
         var ret = mapObj[matched];
         return typeof ret !== 'undefined' ? ret : matched;
     });
@@ -14,9 +14,9 @@ function convertEn2Fa(input)
 }
 
 function convertFa2En(input)
-{
-    const mapObjFa2En = {"ظ":"z", "ط":"x", "ز":"c", "ر":"v", "ذ":"b", "د":"n", "پ":"m", "و":",","ش":"a", "س":"s", "ی":"d", "ب":"f", "ل":"g", "ا":"h", "ت":"j", "ن":"k", "م":"l", "ک":";", "گ":"\'", "ض":"q", "ص":"w", "ث":"e", "ق":"r", "ف":"t", "غ":"y", "ع":"u", "ه":"i", "خ":"o", "ح":"p", "ج":"[", "چ":"]", "پ":"\\", "آ":"H", "ك":"Z", "ط":"X", "ژ":"C", "ء":"M", "ي":"D"};
-    return convert(mapObjFa2En, input);
+{ 
+    const mapObjFa2En = {"ظ":"z", "ط":"x", "ز":"c", "ر":"v", "ذ":"b", "د":"n", "پ":"m", "و":", ","ش":"a", "س":"s", "ی":"d", "ب":"f", "ل":"g", "ا":"h", "ت":"j", "ن":"k", "م":"l", "ک":";", "گ":"\'", "ض":"q", "ص":"w", "ث":"e", "ق":"r", "ف":"t", "غ":"y", "ع":"u", "ه":"i", "خ":"o", "ح":"p", "ج":"[", "چ":"]", "پ":"\\", "آ":"H", "ك":"Z", "ژ":"C", "ء":"M", "ي":"D"};
+    return convert(mapObjFa2En, input);  
 }
 
 function onClickHandler(info, tab){
@@ -38,7 +38,6 @@ function onClickHandler(info, tab){
 chrome.contextMenus.onClicked.addListener(onClickHandler);
 
 chrome.runtime.onInstalled.addListener(function() {
-    // Create one test item for each context type. 
     chrome.contextMenus.create({"title": "تبدیل به فارسی", "contexts":["selection"], "id": "selection2Fa"});
     chrome.contextMenus.create({"title": "تبدیل به انگلیسی", "contexts":["selection"], "id": "selection2En"});
 });
